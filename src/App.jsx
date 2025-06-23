@@ -1,16 +1,24 @@
 // import { useState } from 'react'
+import NavBar from "./components/navBar"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import './App.css'
+
 
 function App() {
- 
+
   return (
     <>
-      <div>
-        hello world
-       </div>
+      <BrowserRouter basename="/">
+        <Routes>
+        <Route path="/" element={<Body />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
+      <NavBar />
     </>
   )
 }
 
 export default App
+
