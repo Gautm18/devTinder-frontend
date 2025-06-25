@@ -1,6 +1,8 @@
 // import { useState } from 'react'
-import NavBar from "./components/navBar"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Body from "./react-components/body"
+import Login from "../src/react-components/login"
+
 
 
 
@@ -10,12 +12,11 @@ function App() {
     <>
       <BrowserRouter basename="/">
         <Routes>
-        <Route path="/" element={<Body />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Body />}>
+            <Route path="login" element={<Login />} />
+          </Route>
         </Routes>
       </BrowserRouter>
-      <NavBar />
     </>
   )
 }
