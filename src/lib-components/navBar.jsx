@@ -8,7 +8,7 @@ import { removeUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const user = useSelector((store => store.user))
-  console.log(user)
+  console.log("user", user)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -24,9 +24,9 @@ const NavBar = () => {
   }
 
   return (
-    <div className="navbar bg-base-300 shadow-sm">
+    <div className="navbar bg-base-300 shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="flex-1">
-        <Link to ="/" className="btn btn-ghost text-xl">DevTinder</Link>
+        <Link to ="/feed" className="btn btn-ghost text-xl">DevTinder</Link>
       </div>
       {user && <div className="flex gap-2">
         <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
@@ -44,10 +44,9 @@ const NavBar = () => {
             <li>
               <Link to="/profile" className="justify-between">
                 Profile
-                <span className="badge">New</span>
               </Link>
             </li>
-            <li><a>Settings</a></li>
+            <li><Link to="/profile/edit">Edit Profile</Link></li>
             <li><a onClick={handleLogout}>Logout</a></li>
           </ul>
         </div>
