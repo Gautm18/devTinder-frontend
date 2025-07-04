@@ -24,7 +24,7 @@ const UserNameInput = () => {
                     title="Only letters, numbers or dash"
                 />
             </label>
-            <p className="validator-hint">
+            <p className="validator-hint hidden">
                 Must be 3 to 30 characters
                 <br />containing only letters, numbers or dash
             </p>
